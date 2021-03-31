@@ -6,21 +6,21 @@
 
     <groupId>com.github.thomasdarimont.keycloak</groupId>
     <artifactId>keycloak-health-checks</artifactId>
-    <version>4.8.3.0-SNAPSHOT</version>
+    <version>11.0.3.0-SNAPSHOT</version>
 
     <properties>
         <!-- general settings -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
         <!-- dependency versions -->
         <lombok.version>1.18.4</lombok.version>
 
-        <keycloak.version>4.8.3.Final</keycloak.version>
+        <keycloak.version>11.0.3</keycloak.version>
         <keycloak.versionedArtifactName>keycloak-${keycloak.version}</keycloak.versionedArtifactName>
-        <infinispan.version>9.3.1.Final</infinispan.version>
+        <infinispan.version>10.1.8.Final</infinispan.version>
     </properties>
 
     <dependencies>
@@ -80,6 +80,11 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.6.1</version>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+            </plugin>
         </plugins>
 
     </build>
@@ -94,4 +99,24 @@
             </snapshots>
         </repository>
     </repositories>
+
+
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>release</id>
+            <name>Unifly Release Repository</name>
+            <url>https://artifactory.unifly.aero/artifactory/ext-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <uniqueVersion>true</uniqueVersion>
+            <id>snapshot</id>
+            <name>Unifly Snapshot Repository</name>
+            <url>https://artifactory.unifly.aero/artifactory/ext-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <scm>
+        <connection>scm:git:https://github.com/unifly-aero/keycloak-health-checks.git</connection>
+    </scm>
 </project>
