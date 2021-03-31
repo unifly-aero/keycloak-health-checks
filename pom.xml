@@ -4,7 +4,7 @@
 
     <groupId>com.github.thomasdarimont.keycloak</groupId>
     <artifactId>keycloak-health-checks</artifactId>
-    <version>11.0.3.0</version>
+    <version>11.0.3.1-SNAPSHOT</version>
 
     <properties>
         <!-- general settings -->
@@ -116,6 +116,6 @@
 
     <scm>
         <connection>scm:git:https://github.com/unifly-aero/keycloak-health-checks.git</connection>
-      <tag>v11.0.3.0</tag>
+      <tag>HEAD</tag>
   </scm>
 </project>
